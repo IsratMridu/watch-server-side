@@ -7,10 +7,12 @@ import brand_logo from '../../images/brand_logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
+import useAuth from '../Context/useAuth';
 
 const user_icon = <FontAwesomeIcon icon={faUser} />
 
 const Header = () => {
+  const {user, handleLogOut} = useAuth();
     return (
      
            
@@ -31,12 +33,27 @@ const Header = () => {
    
     <Nav.Link as={Link} className='text-white' to="/home">Home</Nav.Link>
     <Nav.Link as={Link} className='text-white' to="/allProducts">Explore</Nav.Link>
+    {
+      user.email && 
+      <>
+      <Nav.Link as={Link} className='text-white' to="/dashboard">Dashboard</Nav.Link>
+      <button className='btn btn-danger' onClick={handleLogOut}>Logout {user?.email}</button>
+    
+      </>
+    }
+
+    {
+      !user.email && 
+      <NavDropdown title={user_icon} >
+      <NavDropdown.Item as={Link} to='/login'>Login</NavDropdown.Item>
+      <NavDropdown.Item as={Link} to='/register'>Register</NavDropdown.Item>
+      
+    </NavDropdown>
+    }
+  
    
-    <NavDropdown title={user_icon} >
-          <NavDropdown.Item as={Link} to='/login'>Login</NavDropdown.Item>
-          <NavDropdown.Item as={Link} to='/register'>Register</NavDropdown.Item>
-          
-        </NavDropdown>
+   
+    
 
 
     </Navbar.Collapse>
