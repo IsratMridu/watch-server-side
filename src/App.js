@@ -15,11 +15,9 @@ import Purchase from './component/Purchase/Purchase';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 import AuthProvider from './component/Context/AuthProvider';
 import Dashboard from './component/Dashboard/Dashboard';
-import MyOrder from './component/MyOrder/MyOrder';
-import Pay from './component/Pay/Pay';
-import AddNewItem from './component/AddNewItem/AddNewItem';
-import ManageAllOrders from './component/ManageAllOrders/ManageAllOrders';
-import ManageAllProducts from './component/ManageAllProducts/ManageAllProducts';
+
+
+import Footer from './component/Footer/Footer';
 
 
 
@@ -40,10 +38,9 @@ function App() {
             <AllProducts></AllProducts>
 
           </Route>
-          <Route exact path='/manageAllProducts'>
-            <ManageAllProducts></ManageAllProducts>
-
-          </Route>
+          
+         
+          
           <Route exact path='/login'>
             <Login></Login>
           </Route>
@@ -55,22 +52,9 @@ function App() {
             <Homepage></Homepage>
 
           </Route>
-          <Route exact path='/myOrder'>
-            <MyOrder></MyOrder>
-
-          </Route>
-          <Route exact path='/pay'>
-            <Pay></Pay>
-
-          </Route>
-          <Route exact path='/manageAllOrders'>
-            <ManageAllOrders></ManageAllOrders>
-
-          </Route>
-          <Route exact path='/addNewItem'>
-            <AddNewItem></AddNewItem>
-
-          </Route>
+          
+         
+         
           
           <PrivateRoute exact path='/dashboard'>
             <Dashboard></Dashboard>
@@ -90,6 +74,7 @@ function App() {
          
 
         </Switch>
+        <Footer></Footer>
       </Router>
       </AuthProvider>
     

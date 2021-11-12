@@ -5,6 +5,7 @@ import useAuth from '../Context/useAuth';
 const Review = () => {
     const {user} = useAuth();
     const reviewRef = useRef();
+    const ratingRef = useRef();
 
     const addReview = (e) =>{
         e.preventDefault();
@@ -12,6 +13,7 @@ const Review = () => {
         const userReview ={
             name: user.displayName,
             email: user.email,
+            rating: ratingRef.current.value,
             comment: reviewRef.current.value
         }
 
@@ -23,7 +25,12 @@ const Review = () => {
             body: JSON.stringify(userReview)
         })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            if(data.acknowledged){
+                alert('Review Posted Successfully');
+                e.target.reset();
+            }
+        })
     }
 
 
@@ -34,6 +41,8 @@ const Review = () => {
                 <input type='text' className='w-25' defaultValue={user.displayName}/>
                 <br/>
                 <input type='text' className='w-25' defaultValue={user.email}/>
+                <br/>
+                <input type='number' className='w-25' ref={ratingRef} placeholder='Enter Your Rating'/>
                 <br/>
                 <textarea placeholder='Enter Your Feedback Here' ref={reviewRef} className='w-50 size'></textarea>
                 <br/>

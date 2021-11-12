@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ExploreProduct from '../ExploreProduct/ExploreProduct';
 
 
+
 const AllProducts = () => {
     const [allProducts, setAllProducts] = useState([]);
     useEffect(()=>{
@@ -13,6 +14,7 @@ const AllProducts = () => {
     return (
        
         <div>
+          
             <div className='container mx-auto row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 gx-0'>
            
             {

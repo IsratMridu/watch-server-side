@@ -1,6 +1,6 @@
 import initializeFirebase from "../FIrebase/firebase.init"
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut    } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
@@ -21,6 +21,15 @@ const useFirebase = () =>{
     const [name,setName] = useState('');
     const [user,setUser] = useState({});
      const [isLoading, setIsLoading] = useState(true);
+     const [admin, setAdmin] = useState({});
+
+     useEffect(()=>{
+       fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+       .then(res =>res.json())
+       .then(data =>setAdmin(data.admin))
+     },[user?.email])
+
+    //  console.log(admin);
 
   
 
@@ -147,7 +156,7 @@ const useFirebase = () =>{
    
 
 
-    return{handleEmail, handlePassword, handleLogin, handleRegister, handleName, handleGoogleLogin, user, handleLogOut, isLoading }
+    return{handleEmail, handlePassword, handleLogin, handleRegister, handleName, handleGoogleLogin, user, handleLogOut, isLoading, admin }
 
 
 }
