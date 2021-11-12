@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
 import useAuth from '../Context/useAuth';
+import MyOrder from '../MyOrder/MyOrder';
+import AddNewItem from './AddNewItem/AddNewItem';
+import MakeAdmin from './MakeAdmin/MakeAdmin';
+import ManageAllOrders from './ManageAllOrders/ManageAllOrders';
+import ManageAllProducts from './ManageAllProducts/ManageAllProducts';
+import Pay from './Pay/Pay';
+import Review from './Review/Review';
+
+
 
 
 
@@ -13,7 +22,7 @@ const Dashboard = () => {
     
     return (
         <div className='pb-5'>
-            <h1 className='py-5 text-center text-danger'>Welcome To Dashboard {user.email}</h1>
+            <h1 className='py-5 text-center text-danger'>{user.email}</h1>
 
             <div className='row mx-auto container'>
                 <div className='col-lg-3 col-md-3 col-sm-12 col-12 '>
@@ -41,7 +50,7 @@ const Dashboard = () => {
 
                       <button className='w-50 my-3 mx-auto btn btn-danger ' onClick={()=>setControl('Add a Product')}>Add a Product</button>
                       <button className='w-50 my-3 mx-auto btn btn-danger ' onClick={()=>setControl('Make Admin')}>Make Admin</button>
-                      <button className='w-50 my-3 mx-auto btn btn-danger ' onClick={()=>setControl('Make Products')}>Manage Products</button>
+                      <button className='w-50 my-3 mx-auto btn btn-danger ' onClick={()=>setControl('Manage Products')}>Manage Products</button>
                       <button className='w-50 my-3 mx-auto btn btn-danger ' onClick={handleLogOut}>Logout</button>
 
                       </div> 
@@ -51,7 +60,30 @@ const Dashboard = () => {
 
                 </div>
                 <div className='col-lg-9 col-md-9 col-sm-12 col-12'>
-                    
+                    {
+                        control === 'Manage All Orders' && <ManageAllOrders></ManageAllOrders>
+                    }
+
+                    {
+                        control === 'Add a Product' && <AddNewItem></AddNewItem>
+                    }
+
+                    {
+                        control ==='Make Admin' && <MakeAdmin></MakeAdmin>
+                    }
+                    {
+                        control === 'Manage Products' && <ManageAllProducts></ManageAllProducts>
+                    }
+                    {
+                        control ==='Pay' && <Pay></Pay>
+                    }
+                    {
+                        control === 'My Orders' && <MyOrder></MyOrder>
+                    }
+                    {
+                        control === 'Review' && <Review></Review>
+                    }
+
 
 
                 </div>

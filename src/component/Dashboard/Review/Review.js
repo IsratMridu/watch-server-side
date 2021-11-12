@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
+import useAuth from '../../Context/useAuth';
 import './Review.css'
-import useAuth from '../Context/useAuth';
+
 
 const Review = () => {
     const {user} = useAuth();
@@ -37,14 +38,14 @@ const Review = () => {
 
     return (
         <div>
-            <form className='text-center mt-4' onSubmit={addReview}>
-                <input type='text' className='w-25' defaultValue={user.displayName}/>
+            <form className='text-center pb-4 mt-4 bg-secondary' onSubmit={addReview} >
+                <input type='text' className='w-25 p-2 my-3' defaultValue={user.displayName}/>
                 <br/>
-                <input type='text' className='w-25' defaultValue={user.email}/>
+                <input type='text' className='w-25  p-2 my-3' defaultValue={user.email}/>
                 <br/>
-                <input type='number' className='w-25' ref={ratingRef} placeholder='Enter Your Rating'/>
+                <input type='number' className='w-25  p-2 my-3' ref={ratingRef} placeholder='Enter Your Rating'/>
                 <br/>
-                <textarea placeholder='Enter Your Feedback Here' ref={reviewRef} className='w-50 size'></textarea>
+                <textarea placeholder='Enter Your Feedback Here' ref={reviewRef} className='w-50 size  p-2 mt-3'></textarea>
                 <br/>
                 <br/>
                 <button className='btn btn-primary px-3 py-2' type='submit'>Post</button>

@@ -35,7 +35,7 @@ const ManageAllProducts = () => {
                     <div className='col my-3' key={product._id}>
                      
   
-    <div className="card h-100">
+    <div className="card h-100 bg-success text-white">
       <img src={product.image} className="card-img-top w-50 mx-auto" alt="..."/>
       <div className="card-body">
         <h5 className="card-title">Name: {product.title}</h5>

@@ -34,7 +34,7 @@ const MyOrder = () => {
         <div className='container row mx-auto g-0 pt-5'>
             {
                 myOrder.map(order=>
-                    <div className="card mb-3" key={order._id}>
+                    <div className="card mb-3 bg-success text-white" key={order._id}>
                     <div className="row g-0">
                       <div className="col-md-4">
                         <img src={order.image} className="img-fluid rounded-start" alt="..."/>

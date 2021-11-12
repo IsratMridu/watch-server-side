@@ -38,8 +38,8 @@ const ManageAllOrders = () => {
         <div className='container row g-0 mx-auto py-3'>
             {
                 orders.map(order =>
-                    <div className='col-lg-4 col-md-6 col-sm-12 col-12' key={order._id}>
-                        <div className="card">
+                    <div className='col-lg-4 col-md-6 col-sm-12 col-12 text-white mb-4' key={order._id}>
+                        <div className="card bg-success">
   <img src={order.image} className="card-img-top w-50 mx-auto" alt="..."/>
   <div className="card-body">
     <p className="card-text">User Mail: {order.email}</p>

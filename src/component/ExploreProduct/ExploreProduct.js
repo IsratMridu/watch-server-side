@@ -5,7 +5,7 @@ const ExploreProduct = (props) => {
     const {brand,image,price,title,type,_id} = props.allProduct;
     // console.log(props.allProduct);
     return (
-        <div className="card mt-5 px-5">
+        <div className="card mt-5 px-5 bg-success text-white">
   <div className="row g-0">
     <div className="col-md-5">
       <img src={image} className="img-fluid" alt="..."/>
@@ -17,7 +17,7 @@ const ExploreProduct = (props) => {
         <p className="card-text">Category: {type}</p>
         <p className="card-text">Price: ${price}</p>
         <Link to={`/purchase/${_id}`}>
-            <button className='btn btn-success'>Purchase</button>
+            <button className='btn btn-danger'>Purchase</button>
 
         </Link>
         

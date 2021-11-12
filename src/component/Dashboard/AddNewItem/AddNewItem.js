@@ -37,7 +37,7 @@ const AddNewItem = () => {
 
     return (
         <div>
-            <form className='text-center py-5' onSubmit={addNewProduct}>
+            <form className='text-center py-5 bg-success ' onSubmit={addNewProduct}>
                
                 <input type='text' placeholder='Enter Product Title' ref={titleRef} className='w-25 mb-4' />
                 <br/>
@@ -51,7 +51,7 @@ const AddNewItem = () => {
                 <br/>
                 <input type='text' placeholder='Enter Product Image URL' ref={imageRef} className='w-25 mb-4' />
                 <br/>
-                <button className='btn btn-success my-3' type='submit'>Add Product</button>
+                <button className='btn btn-warning my-3' type='submit'>Add Product</button>
             </form>
         </div>
     );

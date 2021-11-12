@@ -42,7 +42,12 @@ const Purchase = () => {
             body:JSON.stringify(orderInfo)
         })
         .then(res =>res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if(data.acknowledged){
+                alert('Order Placed Successfully');
+                e.target.reset();
+            }
+        })
 
 
     }
@@ -68,21 +73,21 @@ const Purchase = () => {
 
 
                 </div>
-                <div className='col-lg-5 col-md-5 col-sm-12 col-12'>
-                    <form className='text-center mt-4' onSubmit={placeOrder}>
-                        <label className='px-2'>User Email:</label>
-                        <input type='text' className='w-50' defaultValue={user?.email}  />
+                <div className='col-lg-5 col-md-5 col-sm-12 col-12 '>
+                    <form className='text-center mt-4 bg-success p-5' onSubmit={placeOrder}>
+                        <label className='px-2 text-white'>User Email:</label>
+                        <input type='text' className='w-50 mb-4' defaultValue={user?.email}  />
                         <br/>
-                        <label className='px-2'>User Name:</label>
-                        <input type='text' className='w-50' defaultValue={user?.displayName}  />
+                        <label className='px-2 text-white'>User Name:</label>
+                        <input type='text' className='w-50 mb-4' defaultValue={user?.displayName}  />
                         <br/>
-                        <label className='px-2'>User Number:</label>
-                        <input type='text' className='w-50' placeholder='Enter Phone Number' ref={phoneRef} />
+                        <label className='px-2 text-white'>User Number:</label>
+                        <input type='text' className='w-50 mb-4' placeholder='Enter Phone Number' ref={phoneRef} />
                         <br/>
-                        <label className='px-2'>User Location:</label>
-                        <input type='text' className='w-50' placeholder='Enter Location' ref={locationRef} />
+                        <label className='px-2 text-white'>User Location:</label>
+                        <input type='text' className='w-50 mb-4' placeholder='Enter Location' ref={locationRef} />
                         <br/>
-                        <button className='btn btn-success w-25' type='submit'>Submit</button>
+                        <button className='btn btn-danger w-25' type='submit'>Submit</button>
 
                     </form>
 

@@ -13,7 +13,7 @@ const AllProducts = () => {
     // console.log(allProducts);
     return (
        
-        <div>
+        <div className='bg-secondary'>
           
             <div className='container mx-auto row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 gx-0'>
            

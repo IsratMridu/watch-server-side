@@ -30,9 +30,9 @@ const MakeAdmin = () => {
 
     return (
         <div>
-            <form className='text-center py-5' onSubmit={makeUserAdmin}>
-                <input placeholder='Enter User Email:' type='email' required ref={emailRef}  />
-                <button type='submit' className='btn btn-success'>Submit</button>
+            <form className='text-center py-5 bg-success' onSubmit={makeUserAdmin}>
+                <input className='p-2 w-50' placeholder='Enter User Email:' type='email' required ref={emailRef}  />
+                <button type='submit' className='btn btn-danger px-3 py-2'>Submit</button>
 
             </form>
             
