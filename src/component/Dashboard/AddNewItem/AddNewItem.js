@@ -19,7 +19,7 @@ const AddNewItem = () => {
             image: imageRef.current.value
         }
 
-        fetch('http://localhost:5000/addNewItem',{
+        fetch('https://floating-woodland-55461.herokuapp.com/addNewItem',{
             method: 'POST',
             headers:{
                 'content-type':'application/json'

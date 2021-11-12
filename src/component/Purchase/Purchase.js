@@ -11,7 +11,7 @@ const Purchase = () => {
     const {user} = useAuth();
     const [product, setProduct] = useState({});
     useEffect(()=>{
-        fetch(`http://localhost:5000/purchase/${id}`)
+        fetch(`https://floating-woodland-55461.herokuapp.com/purchase/${id}`)
         .then(res =>res.json())
         .then(data => setProduct(data))
     },[id])
@@ -34,7 +34,7 @@ const Purchase = () => {
 
         }
 
-        fetch('http://localhost:5000/confirmOrder',{
+        fetch('https://floating-woodland-55461.herokuapp.com/confirmOrder',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

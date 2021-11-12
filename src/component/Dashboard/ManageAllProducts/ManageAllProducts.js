@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react';
 const ManageAllProducts = () => {
     const[products, setProducts] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/allProducts')
+        fetch('https://floating-woodland-55461.herokuapp.com/allProducts')
         .then(res=> res.json())
         .then(data => setProducts(data))
     },[])
 
     const deleteProduct =(id)=>{
         // console.log(id);
-        fetch(`http://localhost:5000/deleteProducts/${id}`,{
+        fetch(`https://floating-woodland-55461.herokuapp.com/deleteProducts/${id}`,{
             method:'DELETE',
             headers:{
                 'content-type':'application/json'

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const ManageAllOrders = () => {
     const[orders,setOrders]= useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/manageAllOrders')
+        fetch('https://floating-woodland-55461.herokuapp.com/manageAllOrders')
         .then(res=> res.json())
         .then(data => setOrders(data))
     },[])
@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
         }
 
 
-        fetch('http://localhost:5000/updateOrderStatus',{
+        fetch('https://floating-woodland-55461.herokuapp.com/updateOrderStatus',{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

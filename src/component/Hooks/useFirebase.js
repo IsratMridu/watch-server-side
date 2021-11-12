@@ -24,7 +24,7 @@ const useFirebase = () =>{
      const [admin, setAdmin] = useState({});
 
      useEffect(()=>{
-       fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+       fetch(`https://floating-woodland-55461.herokuapp.com/checkAdmin/${user?.email}`)
        .then(res =>res.json())
        .then(data =>setAdmin(data.admin))
      },[user?.email])
@@ -97,7 +97,7 @@ const useFirebase = () =>{
         email: mail
       };
 
-      fetch('http://localhost:5000/googleUser',{
+      fetch('https://floating-woodland-55461.herokuapp.com/googleUser',{
         method: 'PUT',
         headers:{
           'content-type': 'application/json'
@@ -119,7 +119,7 @@ const useFirebase = () =>{
            password: pass
        };
 
-       fetch('http://localhost:5000/addUser',{
+       fetch('https://floating-woodland-55461.herokuapp.com/addUser',{
            method: 'POST',
            headers:{
                'content-type':'application/json'

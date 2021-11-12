@@ -10,7 +10,7 @@ const MakeAdmin = () => {
   
         }
 
-       fetch('http://localhost:5000/addRole',{
+       fetch('https://floating-woodland-55461.herokuapp.com/addRole',{
            method: 'PUT',
            headers:{
                 'content-type':'application/json'

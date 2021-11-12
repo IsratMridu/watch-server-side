@@ -18,7 +18,7 @@ const Review = () => {
             comment: reviewRef.current.value
         }
 
-        fetch('http://localhost:5000/addReview',{
+        fetch('https://floating-woodland-55461.herokuapp.com/addReview',{
             method: 'POST',
             headers:{
                 'content-type': 'application/json'

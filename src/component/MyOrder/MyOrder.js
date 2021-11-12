@@ -6,7 +6,7 @@ const MyOrder = () => {
     // console.log(user?.email);
     const [myOrder,setMyOrder] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/myOrder/${user.email}`)
+        fetch(`https://floating-woodland-55461.herokuapp.com/myOrder/${user.email}`)
         .then(res => res.json())
         .then(data => setMyOrder(data))
     },[user.email])
@@ -14,7 +14,7 @@ const MyOrder = () => {
     // console.log(myOrder);
 
     const deleteProduct = (id) =>{
-        fetch(`http://localhost:5000/deleteProduct/${id}`,{
+        fetch(`https://floating-woodland-55461.herokuapp.com/deleteProduct/${id}`,{
             method:'DELETE'
         })
         .then(res => res.json())

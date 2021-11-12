@@ -10,7 +10,7 @@ const Homepage = () => {
   const [products,setProducts] = useState([]);
   const [reviews,setReviews] = useState([]);
   useEffect(()=>{
-    fetch('http://localhost:5000/allProducts')
+    fetch('https://floating-woodland-55461.herokuapp.com/allProducts')
     .then(res=> res.json())
     .then(data => setProducts(data))
   },[])
@@ -19,7 +19,7 @@ const Homepage = () => {
   // console.log(slicedProduct);
 
   useEffect(()=>{
-    fetch('http://localhost:5000/findReview')
+    fetch('https://floating-woodland-55461.herokuapp.com/findReview')
     .then(res=>res.json())
     .then(data=> setReviews(data))
   },[])
