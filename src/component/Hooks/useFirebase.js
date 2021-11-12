@@ -24,7 +24,7 @@ const useFirebase = () =>{
      const [admin, setAdmin] = useState({});
 
      useEffect(()=>{
-       fetch(`https://floating-woodland-55461.herokuapp.com/checkAdmin/${user?.email}`)
+       fetch(`https://floating-woodland-55461.herokuapp.com/checkAdmin/${user.email}`)
        .then(res =>res.json())
        .then(data =>setAdmin(data.admin))
      },[user?.email])
